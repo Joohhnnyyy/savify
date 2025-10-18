@@ -1,73 +1,181 @@
-# Welcome to your Lovable project
+# Savify
 
-## Project info
+**AI-Powered Financial Coaching Platform**
 
-**URL**: https://lovable.dev/projects/c91044d2-308d-42cd-b4ca-c8afb0e041bc
+Savify is a modern web application that provides personalized AI financial coaching designed to help individuals with irregular income patterns achieve financial wellness. The platform learns from user behavior, analyzes spending patterns, identifies financial risks, and offers tailored recommendations to improve financial health.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+### Core Functionality
+- **AI-Powered Financial Coaching**: Personalized guidance that adapts to individual financial patterns
+- **Behavioral Analysis**: Advanced pattern recognition for spending habits and financial behaviors
+- **Risk Assessment**: Intelligent identification of potential financial risks
+- **Tailored Recommendations**: Customized advice based on individual financial situations
+- **Multi-Platform Authentication**: Support for email, Google, GitHub, and Microsoft sign-in
 
-**Use Lovable**
+### User Experience
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Modern UI**: Built with shadcn/ui components and Tailwind CSS
+- **Real-time Updates**: Dynamic content updates and interactive elements
+- **Professional Interface**: Clean, intuitive design focused on user experience
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c91044d2-308d-42cd-b4ca-c8afb0e041bc) and start prompting.
+## Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend
+- **React 18** - Modern React with hooks and functional components
+- **TypeScript** - Type-safe development environment
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality React component library
 
-**Use your preferred IDE**
+### Backend & Services
+- **Firebase** - Authentication and real-time database
+- **Supabase** - Additional backend services and database management
+- **React Query** - Server state management and caching
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Development Tools
+- **ESLint** - Code linting and quality assurance
+- **PostCSS** - CSS processing and optimization
+- **React Hook Form** - Form handling and validation
+- **Zod** - Schema validation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting Started
 
-Follow these steps:
+### Prerequisites
+- Node.js (version 18 or higher)
+- npm or yarn package manager
+- Git for version control
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd savify
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+3. **Environment Setup**
+   Create a `.env` file in the root directory and configure the following variables:
+   ```env
+   VITE_FIREBASE_API_KEY=your_firebase_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+   VITE_FIREBASE_APP_ID=your_firebase_app_id
+   VITE_FIREBASE_MEASUREMENT_ID=your_firebase_measurement_id
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to `http://localhost:8080` to view the application
+
+### Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build the application for production
+- `npm run build:dev` - Build the application in development mode
+- `npm run lint` - Run ESLint for code quality checks
+- `npm run preview` - Preview the production build locally
+
+## Project Structure
+
+```
+savify/
+├── public/                 # Static assets
+│   ├── favicon.ico
+│   ├── robots.txt
+│   └── *.mp4              # Video assets
+├── src/
+│   ├── components/        # Reusable UI components
+│   ├── contexts/          # React context providers
+│   ├── hooks/             # Custom React hooks
+│   ├── integrations/      # Third-party service integrations
+│   ├── lib/               # Utility functions and configurations
+│   ├── pages/             # Application pages/routes
+│   └── assets/            # Images and other assets
+├── supabase/              # Supabase configuration
+└── configuration files    # Various config files
 ```
 
-**Edit a file directly in GitHub**
+## Key Components
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Authentication
+- Multi-provider authentication system
+- Firebase integration for secure user management
+- Support for email/password, Google, GitHub, and Microsoft sign-in
 
-**Use GitHub Codespaces**
+### Financial Coaching
+- AI-powered analysis engine
+- Personalized recommendation system
+- Pattern recognition algorithms
+- Risk assessment tools
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### User Interface
+- Responsive design system
+- Modern component architecture
+- Accessibility-focused development
+- Performance-optimized rendering
 
-## What technologies are used for this project?
+## Development Guidelines
 
-This project is built with:
+### Code Quality
+- TypeScript for type safety
+- ESLint configuration for consistent code style
+- Component-based architecture
+- Responsive design principles
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Performance
+- Vite for fast development and building
+- Code splitting and lazy loading
+- Optimized asset delivery
+- Efficient state management
 
-## How can I deploy this project?
+### Security
+- Environment variable management
+- Secure authentication flows
+- Data validation and sanitization
+- HTTPS enforcement in production
 
-Simply open [Lovable](https://lovable.dev/projects/c91044d2-308d-42cd-b4ca-c8afb0e041bc) and click on Share -> Publish.
+## Deployment
 
-## Can I connect a custom domain to my Lovable project?
+### Production Build
+```bash
+npm run build
+```
 
-Yes, you can!
+### Preview Production Build
+```bash
+npm run preview
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The application is optimized for deployment on modern hosting platforms including Vercel, Netlify, and traditional web servers.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Contact Information
+
+- **Email**: info@savify.iq
+- **Phone**: +964 770 295 0000
+- **Address**: Iraq, Sulaymaniyah, Malik Mahmud Street, District 305, Alley 10, Building 84
+
+## Contributing
+
+We welcome contributions to improve Savify. Please ensure all contributions follow our coding standards and include appropriate tests.
+
+## License
+
+This project is proprietary software. All rights reserved.
+
+---
+
+**Savify** - Transforming financial wellness through intelligent, personalized AI coaching.

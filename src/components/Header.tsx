@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 
 const navigation = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Philosophy", href: "#philosophy" },
-  { name: "Development", href: "#development" },
-  { name: "Career", href: "#career" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Philosophy", href: "/philosophy" },
+  { name: "Development", href: "/development" },
+  { name: "Career", href: "/career" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export const Header = () => {

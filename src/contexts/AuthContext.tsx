@@ -13,7 +13,7 @@ import {
   ConfirmationResult,
   PhoneAuthProvider
 } from 'firebase/auth';
-import { auth, googleProvider, githubProvider, microsoftProvider, RecaptchaVerifier, signInWithPhoneNumber } from '@/lib/firebase';
+import { auth, googleProvider, githubProvider, microsoftProvider, RecaptchaVerifier, signInWithPhoneNumber } from '../lib/firebase';
 
 interface AuthContextType {
   currentUser: User | null;

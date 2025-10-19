@@ -1,8 +1,6 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
   "framework": "vite",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
@@ -20,5 +18,6 @@
   ],
   "env": {
     "VITE_API_URL": "https://savify-backend.onrender.com"
-  }
+  },
+  "installCommand": "npm install"
 }

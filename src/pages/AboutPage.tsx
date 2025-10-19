@@ -142,12 +142,12 @@ const AboutPage = () => {
             
             <div className="animate-fade-in-up delay-400">
               <div className="p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 h-full">
-                <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
-                  <Target className="w-8 h-8 text-secondary" />
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                  <TrendingUp className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-6 text-secondary">Vision</h3>
+                <h3 className="text-2xl font-bold mb-6 text-primary">Vision</h3>
                 <p className="text-lg text-foreground leading-relaxed">
-                  Empowering everyone to achieve financial freedom through intelligent, personalized AI coaching.
+                  Empowering everyone to achieve financial freedom through intelligent, personalized AI coaching. We envision a world where financial success isn't determined by traditional employment patterns, but where every individual—regardless of their income structure—has access to sophisticated financial guidance that grows with them and adapts to their evolving needs.
                 </p>
               </div>
             </div>

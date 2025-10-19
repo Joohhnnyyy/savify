@@ -58,6 +58,17 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontFamily: {
+        'ddin': ['D-DIN Regular', 'sans-serif'],
+        'ddin-bold': ['D-DIN DIN-Bold', 'sans-serif'],
+        'ddin-italic': ['D-DIN DIN-Italic', 'sans-serif'],
+        'ddin-condensed': ['D-DIN Condensed Regular', 'sans-serif'],
+        'ddin-exp': ['D-DIN Exp Regular', 'sans-serif'],
+        'roboto-mono': ['Roboto Mono Regular', 'monospace'],
+        'roboto-mono-bold': ['Roboto Mono Bold', 'monospace'],
+        'roboto-mono-light': ['Roboto Mono Light', 'monospace'],
+        'roboto-mono-medium': ['Roboto Mono Medium', 'monospace'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

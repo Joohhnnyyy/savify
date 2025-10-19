@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Target, Zap, Building2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const Philosophy = () => {
+  const navigate = useNavigate();
+  
   const principles = [
     {
       icon: Building2,
@@ -49,6 +52,10 @@ export const Philosophy = () => {
               <Button 
                 variant="outline"
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium px-8 py-3 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+                onClick={() => {
+                  console.log('Development button clicked - navigating to /development');
+                  navigate('/development');
+                }}
               >
                 Development
                 <TrendingUp className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

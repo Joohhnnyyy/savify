@@ -51,16 +51,50 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const signup = async (email: string, password: string, name?: string) => {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    if (name && userCredential.user) {
-      await updateProfile(userCredential.user, {
-        displayName: name
-      });
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      if (name && userCredential.user) {
+        await updateProfile(userCredential.user, {
+          displayName: name
+        });
+      }
+    } catch (error: any) {
+      console.error('Signup error details:', error);
+      
+      // Provide more specific error messages
+      if (error.code === 'auth/email-already-in-use') {
+        throw new Error('An account with this email already exists. Please sign in instead.');
+      } else if (error.code === 'auth/weak-password') {
+        throw new Error('Password is too weak. Please use at least 6 characters.');
+      } else if (error.code === 'auth/invalid-email') {
+        throw new Error('Invalid email format. Please enter a valid email address.');
+      } else {
+        throw new Error(error.message || 'Account creation failed. Please try again.');
+      }
     }
   };
 
   const login = async (email: string, password: string) => {
-    await signInWithEmailAndPassword(auth, email, password);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error: any) {
+      console.error('Login error details:', error);
+      
+      // Provide more specific error messages
+      if (error.code === 'auth/invalid-credential') {
+        throw new Error('Invalid email or password. Please check your credentials and try again.');
+      } else if (error.code === 'auth/user-not-found') {
+        throw new Error('No account found with this email. Please sign up first.');
+      } else if (error.code === 'auth/wrong-password') {
+        throw new Error('Incorrect password. Please try again.');
+      } else if (error.code === 'auth/invalid-email') {
+        throw new Error('Invalid email format. Please enter a valid email address.');
+      } else if (error.code === 'auth/user-disabled') {
+        throw new Error('This account has been disabled. Please contact support.');
+      } else {
+        throw new Error(error.message || 'Login failed. Please try again.');
+      }
+    }
   };
 
   const logout = async () => {
@@ -68,7 +102,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   const loginWithGoogle = async () => {
-    await signInWithPopup(auth, googleProvider);
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (error: any) {
+      console.error('Google login error details:', error);
+      throw error;
+    }
   };
 
   const loginWithGithub = async () => {

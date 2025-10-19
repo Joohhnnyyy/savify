@@ -17,7 +17,7 @@ const navigation = [
   { name: "About", href: "/about" },
   { name: "Philosophy", href: "/philosophy" },
   { name: "Development", href: "/development" },
-  { name: "Career", href: "/career" },
+  { name: "Dashboard", href: "/dashboard" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -37,7 +37,9 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 transition-all duration-300">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center animate-fade-in-down">
+          <div className="flex items-center gap-3 animate-fade-in-down">
+            <span className="w-8 h-8 rounded-full border-4 flex items-center justify-center" style={{ borderColor: 'rgb(134.9, 68.1, 79.1)' }}>
+            </span>
             <span className="text-2xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               SAVIFY
             </span>

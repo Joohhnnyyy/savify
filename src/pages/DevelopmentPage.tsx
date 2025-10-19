@@ -1,6 +1,9 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { AnimatedBeamDemo } from "@/components/animated-beam-demo";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { 
   TrendingUp, 
   Target, 
@@ -17,6 +20,19 @@ import {
 } from "lucide-react";
 
 const DevelopmentPage = () => {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+
+  const handleStartJourney = () => {
+    if (currentUser) {
+      // User is logged in, redirect to financial dashboard
+      navigate('/dashboard');
+    } else {
+      // User is not logged in, redirect to login page
+      navigate('/login');
+    }
+  };
+
   const developmentAreas = [
     {
       icon: TrendingUp,
@@ -46,7 +62,7 @@ const DevelopmentPage = () => {
       icon: BarChart3,
       title: "Real-Time Monitoring",
       description: "Continuous monitoring of your financial health with real-time alerts and recommendations.",
-      features: ["Live financial tracking", "Automated alert systems", "Performance analytics", "Continuous optimization suggestions"]
+      features: ["Smart financial tracking", "Automated alert systems", "Performance analytics", "Continuous optimization suggestions"]
     },
     {
       icon: Lightbulb,
@@ -112,7 +128,7 @@ const DevelopmentPage = () => {
           </p>
 
           <div className="animate-fade-in-up delay-600">
-            <LiquidButton size="lg" className="font-medium">
+            <LiquidButton size="lg" className="font-medium" onClick={handleStartJourney}>
               Start Your Financial Journey
               <ArrowRight className="w-5 h-5 ml-2" />
             </LiquidButton>
@@ -180,6 +196,28 @@ const DevelopmentPage = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* AI System Architecture Section */}
+      <section className="py-20 bg-gradient-to-br from-background via-background to-muted/20 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">AI System Architecture</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Our intelligent multi-agent system works collaboratively to provide comprehensive financial guidance and personalized recommendations.
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <AnimatedBeamDemo />
           </div>
         </div>
       </section>

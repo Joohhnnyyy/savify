@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Eye, EyeOff, Mail, Lock, User, ArrowRight, Github } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
 import { ConfirmationResult } from "firebase/auth";
@@ -25,7 +25,11 @@ const LoginPage = () => {
 
   const { signup, login, loginWithGoogle, loginWithGithub, loginWithMicrosoft } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const { toast } = useToast();
+
+  // Get the intended destination from location state, default to home
+  const from = location.state?.from?.pathname || "/";
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -60,7 +64,7 @@ const LoginPage = () => {
           description: "Your account has been created successfully.",
         });
       }
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (error: any) {
       toast({
         title: "Error",
@@ -80,7 +84,7 @@ const LoginPage = () => {
         title: "Success!",
         description: "You have been signed in with Google successfully.",
       });
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (error: any) {
       toast({
         title: "Error",
@@ -100,7 +104,7 @@ const LoginPage = () => {
         title: "Success!",
         description: "You have been signed in with GitHub successfully.",
       });
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (error: any) {
       toast({
         title: "Error",
@@ -120,7 +124,7 @@ const LoginPage = () => {
         title: "Success!",
         description: "You have been signed in with Microsoft successfully.",
       });
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (error: any) {
       toast({
         title: "Error",

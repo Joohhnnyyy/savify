@@ -1,8 +1,23 @@
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { ChevronDown, ArrowRight, Brain, TrendingUp } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
+import heroBackground from "@/assets/hero-background.png";
 
 export const Hero = () => {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+
+  const handleStartJourney = () => {
+    if (currentUser) {
+      // User is logged in, redirect to financial dashboard
+      navigate('/dashboard');
+    } else {
+      // User is not logged in, redirect to login page
+      navigate('/login');
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div 
@@ -37,8 +52,8 @@ export const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-white/90 mb-12 max-w-3xl leading-relaxed animate-fade-in-up delay-400">
-            Whether you're a gig worker, freelancer, or have irregular income, our AI learns your unique financial patterns to deliver personalized savings strategies, investment advice, and spending insights that actually work for your lifestyle.
+          <p className="text-lg md:text-xl text-white/90 mb-12 max-w-2xl leading-relaxed animate-fade-in-up delay-400">
+            AI-powered financial coaching tailored to your unique income patterns and lifestyle.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-600">
@@ -46,6 +61,7 @@ export const Hero = () => {
               size="xxl" 
               variant="default"
               className="font-semibold text-base group text-white"
+              onClick={handleStartJourney}
             >
               <span className="flex items-center gap-3">
                 <TrendingUp className="w-5 h-5 group-hover:animate-pulse" />
@@ -58,6 +74,10 @@ export const Hero = () => {
               size="xxl" 
               variant="outline"
               className="font-medium backdrop-blur-sm"
+              onClick={() => {
+                console.log('See How It Works button clicked - navigating to /development');
+                navigate('/development');
+              }}
             >
               See How It Works
             </LiquidButton>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Database, Shield, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const About = () => {
   return (
@@ -31,24 +32,28 @@ export const About = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="default"
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8 py-6 h-auto rounded-full shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105 group"
-              >
-                <span className="flex items-center gap-3">
-                  Start Your Journey
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
+              <Link to="/development">
+                <Button 
+                  variant="default"
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8 py-6 h-auto rounded-full shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105 group"
+                >
+                  <span className="flex items-center gap-3">
+                    Start Your Journey
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Button>
+              </Link>
               
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-2 border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 font-medium px-8 py-6 h-auto rounded-full transition-all duration-300"
-              >
-                See How It Works
-              </Button>
+              <Link to="/about">
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 font-medium px-8 py-6 h-auto rounded-full transition-all duration-300"
+                >
+                  See How It Works
+                </Button>
+              </Link>
             </div>
           </div>
 

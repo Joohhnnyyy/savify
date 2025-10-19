@@ -1,9 +1,9 @@
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { LiquidButton } from "./ui/liquid-glass-button";
 import { Menu, X, User, LogOut } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useAuth } from "@/contexts/AuthContext";
-import { Button } from "@/components/ui/button";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import { Button } from "./ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,

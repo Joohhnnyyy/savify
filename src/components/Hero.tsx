@@ -1,8 +1,8 @@
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { LiquidButton } from "./ui/liquid-glass-button";
 import { ChevronDown, ArrowRight, Brain, TrendingUp } from "lucide-react";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import heroBackground from "@/assets/hero-background.png";
+import heroBackground from "../assets/hero-background.png";
 
 export const Hero = () => {
   const { currentUser } = useAuth();

@@ -1,8 +1,8 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
-import { AnimatedBeamDemo } from "@/components/animated-beam-demo";
-import { useAuth } from "@/contexts/AuthContext";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { LiquidButton } from "../components/ui/liquid-glass-button";
+import { AnimatedBeamDemo } from "../components/animated-beam-demo";
+import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { 
   TrendingUp, 

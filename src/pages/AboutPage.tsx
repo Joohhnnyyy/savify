@@ -1,6 +1,6 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { LiquidButton } from "../components/ui/liquid-glass-button";
 import { ArrowRight, Brain, Database, Shield, TrendingUp, AlertTriangle, Target } from "lucide-react";
 
 const AboutPage = () => {
